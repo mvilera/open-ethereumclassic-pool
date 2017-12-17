@@ -8,11 +8,10 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/ethereum/go-ethereum/common"
-
 	"github.com/mvilera/open-ethereumclassic-pool/rpc"
 	"github.com/mvilera/open-ethereumclassic-pool/storage"
 	"github.com/mvilera/open-ethereumclassic-pool/util"
+	"github.com/ethereum/go-ethereum/common"
 )
 
 type PayoutsConfig struct {
@@ -31,12 +30,12 @@ type PayoutsConfig struct {
 }
 
 func (self PayoutsConfig) GasHex() string {
-	x := common.String2Big(self.Gas)
+	x := util.String2Big(self.Gas)
 	return common.BigToHash(x).Hex()
 }
 
 func (self PayoutsConfig) GasPriceHex() string {
-	x := common.String2Big(self.GasPrice)
+	x := util.String2Big(self.GasPrice)
 	return common.BigToHash(x).Hex()
 }
 
@@ -119,7 +118,7 @@ func (u *PayoutsProcessor) process() {
 		amountInShannon := big.NewInt(amount)
 
 		// Shannon^2 = Wei
-		amountInWei := new(big.Int).Mul(amountInShannon, common.Shannon)
+		amountInWei := new(big.Int).Mul(amountInShannon, util.Shannon)
 
 		if !u.reachedThreshold(amountInShannon) {
 			continue
