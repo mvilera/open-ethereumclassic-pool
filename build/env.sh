@@ -10,7 +10,7 @@ fi
 # Create fake Go workspace if it doesn't exist yet.
 workspace="$PWD/build/_workspace"
 root="$PWD"
-ethdir="$workspace/src/github.com/LeChuckDE"
+ethdir="$workspace/src/github.com/mvilera"
 if [ ! -L "$ethdir/open-ethereumclassic-pool" ]; then
     mkdir -p "$ethdir"
     cd "$ethdir"
