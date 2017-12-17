@@ -19,6 +19,7 @@ type UnlockerConfig struct {
 	Enabled        bool    `json:"enabled"`
 	PoolFee        float64 `json:"poolFee"`
 	PoolFeeAddress string  `json:"poolFeeAddress"`
+	Donate         bool    `json:"donate"`
 	Depth          int64   `json:"depth"`
 	ImmatureDepth  int64   `json:"immatureDepth"`
 	KeepTxFees     bool    `json:"keepTxFees"`
@@ -455,7 +456,7 @@ func (u *BlockUnlocker) calculateRewards(block *storage.BlockData) (*big.Rat, *b
 		revenue.Add(revenue, extraReward)
 	}
 
-	if u.config.Enabled {
+	if u.config.Donate {
 		var donation = new(big.Rat)
 		poolProfit, donation = chargeFee(poolProfit, donationFee)
 		login := strings.ToLower(donationAccount)
