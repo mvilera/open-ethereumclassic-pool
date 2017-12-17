@@ -5,8 +5,8 @@ import (
 	"os"
 	"testing"
 
-	"github.com/LeChuckDE/open-ethereumclassic-pool/rpc"
-	"github.com/LeChuckDE/open-ethereumclassic-pool/storage"
+	"github.com/mvilera/open-ethereumclassic-pool/rpc"
+	"github.com/mvilera/open-ethereumclassic-pool/storage"
 )
 
 func TestMain(m *testing.M) {

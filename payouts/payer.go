@@ -10,9 +10,9 @@ import (
 
 	"github.com/ethereum/go-ethereum/common"
 
-	"github.com/LeChuckDE/open-ethereumclassic-pool/rpc"
-	"github.com/LeChuckDE/open-ethereumclassic-pool/storage"
-	"github.com/LeChuckDE/open-ethereumclassic-pool/util"
+	"github.com/mvilera/open-ethereumclassic-pool/rpc"
+	"github.com/mvilera/open-ethereumclassic-pool/storage"
+	"github.com/mvilera/open-ethereumclassic-pool/util"
 )
 
 type PayoutsConfig struct {
